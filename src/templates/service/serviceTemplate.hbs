@@ -1,0 +1,41 @@
+<div>
+
+	<div class="row">
+		<h1 class="col-md-4">Services</h1>
+  		<a href="#/service/edit" class="col-md-1 offset-md-7 btn btn-link link-action"><span class="oi oi-plus"></span></a>
+	</div>
+	
+	<div class="row">
+		<table class="table table-hover table-striped">
+		  <thead>
+		    <tr>
+		      <th>Api</th>
+		      <th>Method</th>
+		      <th>Edit</th>
+		      <th>Delete</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	{{#each services}}
+			    <tr>
+			      <td>{{this.api}}</td>
+			      <td>{{this.method}}</td>
+			      <td>
+			      	<a href="#/service/edit/{{this._id}}" class="btn btn-link link-action"><span class="oi oi-pencil"></span></a>
+			      </td>
+			      <td>
+			      	<button type="button" class="btn btn-link link-action" id="delete" data-id="{{this._id}}" data-api="{{this.api}}" data-toggle="modal" data-target="#serviceModal">
+			      		<span class="oi oi-x"></span>
+			      	</button>
+			      </td>
+			    </tr>
+			{{/each}}
+		  </tbody>
+		</table>
+	</div>
+
+	<ul id="pagination" class="pagination-md justify-content-end"></ul>
+
+</div>
+
+{{> modalTemplate modalValues}}

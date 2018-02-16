@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBag" aria-controls="navBag" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navBag">
+    <a class="navbar-brand" href="#/home">Home</a>
+    
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" id="dashboard">
+        <a class="nav-link" href="#/dashboard" data-target="dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item" id="user">
+        <a class="nav-link" href="#/user" data-target="user">User</a>
+      </li>
+      <li class="nav-item" id="permission">
+        <a class="nav-link" href="#/permission" data-target="permission">Permission</a>
+      </li>
+      <li class="nav-item" id="service">
+        <a class="nav-link" href="#/service" data-target="service">Service</a>
+      </li>
+    </ul>
+
+    <button type="button" class="btn my-sm-2 my-sm-0 btn-outline-light" id="logout" data-toggle="modal" data-target="#{{modalValues.target}}">
+      Logout
+    </button>
+    
+  </div>
+</nav>
+
+{{> modalTemplate modalValues}}
