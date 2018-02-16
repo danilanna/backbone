@@ -16,7 +16,7 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		  	{{#each services}}
+		  	{{#each values}}
 			    <tr>
 			      <td>{{this.api}}</td>
 			      <td>{{this.method}}</td>
@@ -24,7 +24,7 @@
 			      	<a href="#/service/edit/{{this._id}}" class="btn btn-link link-action"><span class="oi oi-pencil"></span></a>
 			      </td>
 			      <td>
-			      	<button type="button" class="btn btn-link link-action" id="delete" data-id="{{this._id}}" data-api="{{this.api}}" data-toggle="modal" data-target="#serviceModal">
+			      	<button type="button" class="btn btn-link link-action" id="delete" data-id="{{this._id}}" data-val="{{this.api}}" data-toggle="modal" data-target="#serviceModal">
 			      		<span class="oi oi-x"></span>
 			      	</button>
 			      </td>

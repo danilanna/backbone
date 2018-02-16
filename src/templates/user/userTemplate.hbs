@@ -17,7 +17,7 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		  	{{#each users}}
+		  	{{#each values}}
 			    <tr>
 			      <td>{{this.name}}</td>
 			      <td>{{this.email}}</td>
@@ -26,7 +26,7 @@
 			      	<a href="#/user/edit/{{this._id}}" class="btn btn-link link-action"><span class="oi oi-pencil"></span></a>
 			      </td>
 			      <td>
-			      	<button type="button" class="btn btn-link link-action" id="delete" data-id="{{this._id}}" data-name="{{this.name}}" data-toggle="modal" data-target="#userModal">
+			      	<button type="button" class="btn btn-link link-action" id="delete" data-id="{{this._id}}" data-val="{{this.name}}" data-toggle="modal" data-target="#userModal">
 			      		<span class="oi oi-x"></span>
 			      	</button>
 			      </td>
