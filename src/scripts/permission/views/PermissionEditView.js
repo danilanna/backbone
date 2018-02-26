@@ -18,7 +18,6 @@ export default class PermissionEditView extends Backbone.Marionette.View {
     });
     this.isNew = options.isNew;
     this.model = new PermissionModel(options);
-    this.render();
   }
 
   get template() {

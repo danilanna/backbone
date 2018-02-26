@@ -1,3 +1,4 @@
+import RootView from '../root/RootView.js';
 import HomeView from '../home/views/HomeView.js';
 import DashboardView from '../dashboard/views/DashboardView.js';
 import AlertView from '../components/alert/AlertView.js';
@@ -8,7 +9,9 @@ import PermissionEditView from '../permission/views/PermissionEditView.js';
 import ServiceView from '../service/views/ServiceView.js';
 import ServiceEditView from '../service/views/ServiceEditView.js';
 
-export default class RouterController extends Backbone.Marionette.Object {
+const rootView = new RootView();
+
+export default class RouterController extends Backbone.Marionette.Object {  
 
   home() {
   	 this.renderView(HomeView);
@@ -51,6 +54,8 @@ export default class RouterController extends Backbone.Marionette.Object {
 
     //store reference to next view
     this.currentView = new ViewClass(options);
+
+    rootView.renderView(this.currentView);
   }
   
 };

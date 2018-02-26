@@ -22,7 +22,6 @@ export default class UserEditView extends Backbone.Marionette.View {
     });
     this.isNew = options.isNew;
     this.model = new UserModel(options);
-    this.render();
   }
 
   get template() {

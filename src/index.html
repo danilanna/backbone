@@ -5,35 +5,29 @@
     <title>ACGoal</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.tmp) styles/main.css -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
-    <!-- endbuild -->
+    
   </head>
   <body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div id="nav-bar"></div>
-
-  	<main role="main" class="container" id="app-view">
-  		<div id="loading" class="ajax_loader hidden"></div>
-      <div id="alerts"></div>
-  		<div id="container"></div>		
-    </main>
+    <div id="root-region">
+      <div id="nav-bar"></div>
+      <div id="loading" class="ajax_loader hidden"></div>
+      <div id="content" class="container">
+        <div id="alerts"></div>
+        <div id="container"></div>
+      </div>    
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>
 
-
-    <!-- build:js scripts/vendor.js -->
-    <!-- endbuild -->
-
-    <!-- build:js({.tmp,app}) scripts/main.js -->
-    <!-- endbuild -->
   </body>
 </html>
