@@ -24,7 +24,6 @@ export default class RootView extends Backbone.Marionette.View {
 
   renderView(view) {
     this.showChildView('content', view);
-    view.render();
   }
 
 };

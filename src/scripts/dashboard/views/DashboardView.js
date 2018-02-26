@@ -7,6 +7,7 @@ export default class DashboardView extends Backbone.Marionette.View {
       el: '#container',
       events: {'click a': 'setNavBarActive'}
     });
+    this.render();
   }
 
   get template() {

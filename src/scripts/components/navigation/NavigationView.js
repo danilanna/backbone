@@ -16,6 +16,7 @@ export default class NavigationView extends Backbone.Marionette.View {
       description: 'Are you sure you want to logout?',
       target: 'navigationModal'
     };
+    this.render();
   }
 
   toggle(event) {

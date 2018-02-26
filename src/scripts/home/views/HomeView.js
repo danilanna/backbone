@@ -14,6 +14,7 @@ export default class HomeView extends Backbone.Marionette.View {
         password: '#password'
       }
     });
+    this.render();
   }
 
   submit() {
@@ -32,7 +33,7 @@ export default class HomeView extends Backbone.Marionette.View {
     return homeTemplate;
   }
 
-  onRender() {
+  render() {
     this.$el.html( this.template() );
     this.bindUIElements();
     return this;
