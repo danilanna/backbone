@@ -1,20 +1,19 @@
-import NavigationView from '../components/navigation/NavigationView.js';
+import NavigationView from '../components/navigation/NavigationView';
 
 export default class RootView extends Backbone.Marionette.View {
-
   constructor() {
     super({
       el: '#root-region',
       template: false,
       regions: {
         content: {
-          el: '#content'
+          el: '#content',
         },
         header: {
-          el: '#nav-bar'
-        }
-      }
-    })
+          el: '#nav-bar',
+        },
+      },
+    });
     this.renderRegions();
   }
 
@@ -25,5 +24,4 @@ export default class RootView extends Backbone.Marionette.View {
   renderView(view) {
     this.showChildView('content', view);
   }
-
-};
+}

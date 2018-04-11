@@ -1,8 +1,8 @@
-import ServiceModel from '../model/ServiceModel.js';
+import ServiceModel from '../model/ServiceModel';
 
 export default class ServiceCollection extends Backbone.Collection {
-	constructor(){
-		super({model: ServiceModel});
-		this.url = '/services';
-	}
-};
+  constructor() {
+    super({ model: ServiceModel });
+    this.url = '/services';
+  }
+}

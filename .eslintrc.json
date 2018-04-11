@@ -1,0 +1,53 @@
+{
+    "extends": "airbnb-base",
+    "globals": {
+        "Backbone": true,
+        "Marionette": true,
+        "$": true,
+        "jQuery": true,
+        "_": true,
+        "event": true,
+        "localStorage": true,
+        "document": true
+    },
+    "rules": {
+        "no-underscore-dangle": ["error", 
+            { "allow": 
+                ["_id"] 
+            }
+        ],
+        "no-unused-vars": ["error", 
+            {   
+                "vars": "local", 
+                "varsIgnorePattern": "router|Marionette|request|rootView",
+                "args": "after-used", 
+                "ignoreRestSiblings": false 
+            }
+        ],
+        "class-methods-use-this": ["error", 
+            { "exceptMethods": 
+                [
+                    "template", 
+                    "buildPermissions", 
+                    "defaults", 
+                    "idAttribute", 
+                    "setNavBarActive", 
+                    "configSync",
+                    "configRequest",
+                    "configResponseError",
+                    "onStart"
+                ] 
+            }
+        ],
+        "new-cap": ["error", 
+            { "newIsCapExceptions": 
+                ["this.model", "model"]
+            }
+        ],
+        "no-param-reassign": ["error", 
+            {   "props": true,
+                "ignorePropertyModificationsFor": ["options"] 
+            }
+        ]
+    }
+}

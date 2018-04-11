@@ -1,9 +1,7 @@
 import * as homeTemplate from '../../../templates/home/homeTemplate.hbs';
-import HomeModel from '../model/HomeModel.js';
-import AlertView from '../../components/alert/AlertView.js';
+import HomeModel from '../model/HomeModel';
 
 export default class HomeView extends Backbone.Marionette.View {
-
   constructor() {
     super({
       el: '#container',
@@ -11,21 +9,21 @@ export default class HomeView extends Backbone.Marionette.View {
       ui: {
         email: '#email',
         form: '#form',
-        password: '#password'
-      }
+        password: '#password',
+      },
     });
     this.render();
   }
 
-  submit() {
+  submit(event) {
     event.preventDefault();
-    const model = new HomeModel({email: this.ui.email.val(), password: this.ui.password.val()});
+    const model = new HomeModel({ email: this.ui.email.val(), password: this.ui.password.val() });
     model.save({}, {
-      success: (model, response, options) => {
+      success: (newModel, response) => {
         localStorage.setItem('token', response.token);
         localStorage.setItem('refreshToken', response.refreshToken);
-        Backbone.history.navigate('/dashboard', {trigger: true});
-      }
+        Backbone.history.navigate('/dashboard', { trigger: true });
+      },
     });
   }
 
@@ -34,9 +32,8 @@ export default class HomeView extends Backbone.Marionette.View {
   }
 
   render() {
-    this.$el.html( this.template() );
+    this.$el.html(this.template());
     this.bindUIElements();
     return this;
   }
-
 }

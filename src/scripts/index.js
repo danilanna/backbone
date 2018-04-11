@@ -1,5 +1,5 @@
-import '../styles/main.scss';
 import Marionette from 'backbone.marionette';
-import App from '../scripts/config/App.js';
+import '../styles/main.scss';
+import App from '../scripts/config/App';
 
 new App().start();

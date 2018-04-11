@@ -1,16 +1,15 @@
 import * as alertTemplate from '../../../templates/components/alert/alertTemplate.hbs';
-import AlertModel from './AlertModel.js';
+import AlertModel from './AlertModel';
 
 export default class AlertView extends Backbone.Marionette.View {
-
   constructor(options) {
     super({
-        el: '#alerts',
-        triggers: { 'click @ui.close': 'close' },
-        ui: {
-          close: '#close'
-        }
-      });
+      el: '#alerts',
+      triggers: { 'click @ui.close': 'close' },
+      ui: {
+        close: '#close',
+      },
+    });
     this.model = new AlertModel(options);
   }
 
@@ -23,9 +22,8 @@ export default class AlertView extends Backbone.Marionette.View {
   }
 
   render() {
-    this.$el.html( this.template(this.model.toJSON()) );
+    this.$el.html(this.template(this.model.toJSON()));
     this.$el.show();
     return this;
   }
-
 }

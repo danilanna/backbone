@@ -1,17 +1,16 @@
-import Router from './Router.js';
-import Request from './Request.js';
-import RootView from '../root/RootView.js';
+import Router from './Router';
+import Request from './Request';
+import RootView from '../root/RootView';
 
 export default class App extends Backbone.Marionette.Application {
+  constructor() {
+    super({});
+  }
 
-    constructor() {
-        super({});
-    }
-
-    onStart() {
-    	new Router();
-    	new Request();
-    	new RootView();
-    	Backbone.history.start();
-    }
-};
+  onStart() {
+    const router = new Router();
+    const request = new Request();
+    const rootView = new RootView();
+    Backbone.history.start();
+  }
+}

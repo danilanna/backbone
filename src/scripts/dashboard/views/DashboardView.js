@@ -1,11 +1,10 @@
 import * as dashboardTemplate from '../../../templates/dashboard/dashboardTemplate.hbs';
 
 export default class DashboardView extends Backbone.Marionette.View {
-
   constructor() {
     super({
       el: '#container',
-      events: {'click a': 'setNavBarActive'}
+      events: { 'click a': 'setNavBarActive' },
     });
     this.render();
   }
@@ -15,14 +14,13 @@ export default class DashboardView extends Backbone.Marionette.View {
   }
 
   render() {
-    this.$el.html( this.template() );
+    this.$el.html(this.template());
     return this;
   }
 
   setNavBarActive(event) {
-    const element = $('#'+$(event.currentTarget).data().target);
+    const element = $(`#${$(event.currentTarget).data().target}`);
     element.siblings().removeClass('active');
     element.addClass('active');
   }
-
 }
