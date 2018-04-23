@@ -64,7 +64,7 @@ export default class Request {
     $(document).ajaxError((event, response) => {
       if (response.status === 403) {
         new AlertView({ message: permissionDeniedMessage, type: 'danger' }).render();
-      } else if (response.status === 0) {
+      } else if (response.status === 0 || response.status === 401) {
         new AlertView({ message: unauthorizedMessage, type: 'danger' }).render();
         Backbone.history.navigate('/home', { trigger: true });
       } else if (response.responseJSON && response.responseJSON.message) {

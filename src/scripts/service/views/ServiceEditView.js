@@ -31,7 +31,7 @@ export default class ServiceEditView extends Backbone.Marionette.View {
     $('#permissions li input[type=checkbox]').each((idx, element) => {
       const input = $(element);
       if ($(element).is(':checked')) {
-        permissions.push(input.val());
+        permissions.push({ _id: input.val() });
       }
     });
     return permissions;
